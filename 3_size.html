@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>html</title>
+	<style>
+		body,
+		h1 {
+			margin: 0
+		}
+
+		.wrap {
+			width: 700px;
+			height: 400px;
+			background: #ccc
+		}
+
+		.unit {
+			background: skyblue;
+			width: 100%;
+			height: 100%;
+		}
+		.box_input	{
+			background: #5c89cc;
+			width: 100%;
+		}
+		.box_input > input {
+			vertical-align: middle;
+			width: calc(100% - 75px);
+			/* 객체에 borderm, padding을 width값에 포함시키는 속성 */
+			box-sizing: border-box; 
+		}
+		.box_input > button {
+			height: 30px;
+			width: 60px;
+			vertical-align: middle;
+			box-sizing: border-box;
+		}
+	</style>
+
+</head>
+
+<body>
+	<div class="wrap">
+		<div class="unit">
+			<div class="box_input">
+				<input>
+				<button></button>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
