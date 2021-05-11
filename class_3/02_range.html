@@ -1,22 +1,84 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>repl.it</title>
-		<link rel="stylesheet" href="css/reset.css">
-    <style>
-		
-		</style>
-  </head>
-  <body>
-    <div class="wrap">
-      <div class="header"></div>
-      <div class="container">
-        <div class="content"></div>
-        <div class="aside"></div>
-      </div>
-      <div class="footer"></div>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>repl.it</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <style>
+    /*********** PC ***********/
+    .wrap {
+      width: 1024px;
+      /* height: 500px; */
+      /* background: #999; */
+      margin: 0 auto;
+    }
+    .header {
+      height: 100px;
+      background: #246c84;
+    }
+    .container {
+      display: table;
+      width: 100%;
+    }
+    /* 같은 table 내의 cell 이라면 하나의 요소에 높이를 지정해도 유효하게 적용됨 */
+    .container .content {
+      height: 300px;
+      background: #cd3637;
+      display: table-cell;
+    }
+    .container .aside {
+      background: #f98903;
+      /* height: 100px; */
+      display: table-cell;
+      width: 400px;
+    }
+    .footer {
+      height: 50px;
+      background: #000;
+    }
+    
+    /*********** TABLET ***********/
+    @media all and (max-width:1024px) {
+      .wrap {
+        width: 768px;
+      }
+      .container .aside {
+        width: 200px;
+      }
+    }
+
+    /*********** MOBILE ***********/
+    @media all and (max-width:768px) {
+      .wrap {
+        width: 100%;
+      }
+      .container {
+        display: block;
+      }
+      .container .content {
+        display: block;
+      }
+      .container .aside {
+        display: block;
+        height: 200px;
+        width: auto; /* width 값 초기화 */
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="header"></div>
+    <div class="container">
+      <div class="content"></div>
+      <div class="aside"></div>
     </div>
-  </body>
+    <div class="footer"></div>
+  </div>
+</body>
+
 </html>
