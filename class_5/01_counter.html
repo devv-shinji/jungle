@@ -10,14 +10,39 @@
 		
 		<script>
 			$(function(){
-				
+				// 현재 카운트를 저장하는 변수
+				var current = 0;
+				// setInterval을 저장하는 변수
+				var saveInt;
+
+				// 시작버튼 click
+				$('.btn_start').click(function() {
+					clearInterval(saveInt); // setInterval 삭제(clear) & 반복실행 중단
+					console.log('start')
+					saveInt = setInterval(function() {
+						current++; // 카운트를 증가시킴
+						$('.txt_number').text(current); // 카운트 변수를 해당 태그에 업데이트
+					}, 1000);
+				});
+				// 스톱버튼 click
+				$('.btn_stop').click(function() {
+					console.log('stop')
+					clearInterval(saveInt);
+				});
+				// 리셋버튼 click
+				$('.btn_reset').click(function() {
+					console.log('reset')
+					current = 0; // 카운트 초기화
+					$('.txt_number').text(current) // 카운트 변수를 해당 태그에 업데이트
+					clearInterval(saveInt)
+				});
 			})
 		</script>
 
   </head>
   <body>
     <div class="box_counter">
-			<div class="txt_Number">0</div>
+			<div class="txt_number">0</div>
 			<div class="box_btn">
 				<a href="javascript:;" class="btn_start">시작</a>
 				<a href="javascript:;" class="btn_stop">스톱</a>
