@@ -36,6 +36,22 @@ $(function() {
             // 입력 후 input의 내용 초기화(삭제)
             $(this).val('');
 
+            //채팅창 맨 밑으로 갈수 있게 하는 스크롤 이벤트
+            var _itemH = 0; //말풍선(item)들의 각각의  높이를 더해줄 변수
+
+            //each문(반복문)을통해 선택한 각요소들의 높이값을 체크 할수 있음
+            $(".chat_area .item").each(function(index){
+                // console.log($(this).height());
+                _itemH += $(this).height() + 15;
+            });
+            console.log(_itemH);
+
+            // 채팅창 영역에 스크롤 애니메이션 이벤트 발생시킴
+            // $('.chat_area').animate({  // 이전에 작동되고 있는 애니메이션이 있어서 딜레이가 된다
+            $('.chat_area').stop().animate({
+                scrollTop: _itemH
+            })
+
         }
     })
 })
